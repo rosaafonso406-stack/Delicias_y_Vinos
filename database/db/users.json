@@ -1,0 +1,10 @@
+[
+  {
+    "_id": "u1",
+    "nome": "Administrador",
+    "email": "admin@deliciasyvinos.com",
+    "password": "$2b$10$M6Q/djKXOzTSrsDbbRE6uewELfYF9K9wgLVOExqmn4AczEVTNwz.C",
+    "role": "admin",
+    "criado_em": "2026-05-31T08:26:03.700Z"
+  }
+]

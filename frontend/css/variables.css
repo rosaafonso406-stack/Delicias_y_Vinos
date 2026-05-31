@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* ── Fundos castanho escuro ── */
+  --bg:           #2a1a0e;   /* fundo principal */
+  --bg2:          #231408;   /* fundo secundário (secções alternadas) */
+  --surface:      #341f10;   /* superfície cartões */
+  --surface2:     #3e2614;   /* hover cartões / dropdowns */
+  --border:       #4e3018;   /* bordas neutras */
+  --border-gold:  rgba(206,171,75,0.28); /* bordas douradas */
+
+  /* ── Dourado ── */
+  --gold:         #ceab4b;
+  --gold-light:   #e8c96a;
+  --gold-dark:    #8a6e28;
+  --gold-faint:   rgba(206,171,75,0.09);
+
+  /* ── Borgonha ── */
+  --wine:         #6b1428;   /* borgonha principal */
+  --wine-light:   #871a33;   /* hover */
+  --wine-dark:    #4a0d1c;   /* mais escuro */
+  --wine-nav:     #5c1020;   /* barra de navegação */
+
+  /* ── Texto ── */
+  --text:         #f5ece0;   /* texto principal */
+  --text-mid:     #c8a882;   /* texto secundário */
+  --text-dim:     #7a5c3a;   /* texto apagado */
+  --text-dead:    #4a3020;   /* texto muito apagado */
+
+  /* ── Tipografia ── */
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-serif:   'Playfair Display', Georgia, serif;
+  --font-ui:      'Montserrat', sans-serif;
+
+  /* ── Misc ── */
+  --transition:   0.25s cubic-bezier(.4,0,.2,1);
+  --shadow:       0 6px 28px rgba(0,0,0,.55);
+  --shadow-sm:    0 2px 10px rgba(0,0,0,.4);
+  --header-h:     122px; /* top(34) + main(52) + nav(36) */
+/* ── Aliases para compatibilidade ── */
+  --bdr:        #4e3018;
+  --surface-alt: #341f10;
+  --cream:      #f5ece0;
+  --cream-dim:  #c8a882;
+  --f-display:  'Cormorant Garamond', Georgia, serif;
+  --f-serif:    'Playfair Display', Georgia, serif;
+  --f-sans:     'Montserrat', sans-serif;
+  --ease:       0.25s cubic-bezier(.4,0,.2,1);
+
+}

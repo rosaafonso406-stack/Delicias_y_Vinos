@@ -1,0 +1,191 @@
+[
+  {
+    "_id": "vinos",
+    "nome": "Vinos",
+    "slug": "vinos",
+    "ordem": 1,
+    "pai": null
+  },
+  {
+    "_id": "vinos-blancos",
+    "nome": "Blancos",
+    "slug": "blancos",
+    "ordem": 1,
+    "pai": "vinos"
+  },
+  {
+    "_id": "vinos-tintos",
+    "nome": "Tintos",
+    "slug": "tintos",
+    "ordem": 2,
+    "pai": "vinos"
+  },
+  {
+    "_id": "vinos-rosados",
+    "nome": "Rosados",
+    "slug": "rosados",
+    "ordem": 3,
+    "pai": "vinos"
+  },
+  {
+    "_id": "vinos-espumosos",
+    "nome": "Espumosos",
+    "slug": "espumosos",
+    "ordem": 4,
+    "pai": "vinos"
+  },
+  {
+    "_id": "vinos-dulces",
+    "nome": "Dulces",
+    "slug": "dulces",
+    "ordem": 5,
+    "pai": "vinos"
+  },
+  {
+    "_id": "vinos-magnum",
+    "nome": "Magnum",
+    "slug": "magnum",
+    "ordem": 6,
+    "pai": "vinos"
+  },
+  {
+    "_id": "vinos-estuches",
+    "nome": "Estuches",
+    "slug": "estuches",
+    "ordem": 7,
+    "pai": "vinos"
+  },
+  {
+    "_id": "vinos-internacionales",
+    "nome": "Internacionales",
+    "slug": "internacionales",
+    "ordem": 8,
+    "pai": "vinos"
+  },
+  {
+    "_id": "vinos-olorosos",
+    "nome": "Olorosos",
+    "slug": "olorosos",
+    "ordem": 9,
+    "pai": "vinos"
+  },
+  {
+    "_id": "destilados",
+    "nome": "Destilados",
+    "slug": "destilados",
+    "ordem": 2,
+    "pai": null
+  },
+  {
+    "_id": "destilados-vermouth",
+    "nome": "Vermouth",
+    "slug": "vermouth",
+    "ordem": 1,
+    "pai": "destilados"
+  },
+  {
+    "_id": "destilados-sidra",
+    "nome": "Sidra",
+    "slug": "sidra",
+    "ordem": 2,
+    "pai": "destilados"
+  },
+  {
+    "_id": "destilados-cremas",
+    "nome": "Cremas y Licores",
+    "slug": "cremasylicores",
+    "ordem": 3,
+    "pai": "destilados"
+  },
+  {
+    "_id": "destilados-brandys",
+    "nome": "Brandys",
+    "slug": "brandys",
+    "ordem": 4,
+    "pai": "destilados"
+  },
+  {
+    "_id": "gourmet",
+    "nome": "Gourmet",
+    "slug": "gourmet",
+    "ordem": 3,
+    "pai": null
+  },
+  {
+    "_id": "gourmet-conservas",
+    "nome": "Conservas",
+    "slug": "conservas",
+    "ordem": 1,
+    "pai": "gourmet"
+  },
+  {
+    "_id": "gourmet-aceite",
+    "nome": "Aceite",
+    "slug": "aceite",
+    "ordem": 2,
+    "pai": "gourmet"
+  },
+  {
+    "_id": "gourmet-ibericos",
+    "nome": "Ibéricos",
+    "slug": "ibericos",
+    "ordem": 3,
+    "pai": "gourmet"
+  },
+  {
+    "_id": "gourmet-pimenton",
+    "nome": "Pimentòn",
+    "slug": "pimenton",
+    "ordem": 4,
+    "pai": "gourmet"
+  },
+  {
+    "_id": "gourmet-fruta",
+    "nome": "Fruta",
+    "slug": "fruta",
+    "ordem": 5,
+    "pai": "gourmet"
+  },
+  {
+    "_id": "infusiones",
+    "nome": "Infusiones",
+    "slug": "infusiones",
+    "ordem": 4,
+    "pai": null
+  },
+  {
+    "_id": "infusiones-cafe",
+    "nome": "Café",
+    "slug": "cafe",
+    "ordem": 1,
+    "pai": "infusiones"
+  },
+  {
+    "_id": "infusiones-cerveza",
+    "nome": "Cerveza",
+    "slug": "cerveza",
+    "ordem": 2,
+    "pai": "infusiones"
+  },
+  {
+    "_id": "dulces",
+    "nome": "Dulces",
+    "slug": "dulces",
+    "ordem": 5,
+    "pai": null
+  },
+  {
+    "_id": "gourmet-chocolates",
+    "nome": "Chocolates",
+    "slug": "chocolates",
+    "ordem": 1,
+    "pai": "dulces"
+  },
+  {
+    "_id": "gourmet-bombones",
+    "nome": "Bombones",
+    "slug": "bombones",
+    "ordem": 2,
+    "pai": "dulces"
+  }
+]

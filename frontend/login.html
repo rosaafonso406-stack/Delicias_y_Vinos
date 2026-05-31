@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Login — Delicias y Vinos</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Jost', Arial, sans-serif;
+      background: #0b0906;
+      color: #ece2cb;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .login-wrap {
+      width: 100%;
+      max-width: 420px;
+      padding: 20px;
+    }
+
+    .login-box {
+      background: #14110b;
+      border: 1px solid rgba(196,154,56,0.24);
+      padding: 40px;
+    }
+
+    .login-logo {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    .login-logo .name {
+      font-size: 22px;
+      color: #e3bf6a;
+      letter-spacing: 0.05em;
+      font-weight: 600;
+    }
+
+    .login-logo .sub {
+      font-size: 10px;
+      color: #6e5535;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+
+    .login-logo .divider {
+      width: 40px;
+      height: 1px;
+      background: rgba(196,154,56,0.30);
+      margin: 16px auto 0;
+    }
+
+    h2 {
+      font-size: 14px;
+      font-weight: 400;
+      color: #6e5535;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      text-align: center;
+      margin-bottom: 28px;
+    }
+
+    .form-grupo {
+      margin-bottom: 16px;
+    }
+
+    .form-grupo label {
+      display: block;
+      font-size: 10px;
+      font-weight: 700;
+      color: #6e5535;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 6px;
+    }
+
+    .form-grupo input {
+      width: 100%;
+      background: #0b0906;
+      border: 1px solid rgba(196,154,56,0.18);
+      padding: 11px 14px;
+      font-size: 14px;
+      color: #ece2cb;
+      outline: none;
+      font-family: inherit;
+      transition: border-color 0.2s;
+    }
+
+    .form-grupo input:focus {
+      border-color: #c49a38;
+    }
+
+    .btn-login {
+      width: 100%;
+      background: #c49a38;
+      color: #0b0906;
+      border: none;
+      padding: 13px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      cursor: pointer;
+      margin-top: 8px;
+      transition: all 0.2s;
+      font-family: inherit;
+    }
+
+    .btn-login:hover { background: #e3bf6a; }
+
+    .erro {
+      background: rgba(192,57,43,0.12);
+      border: 1px solid rgba(192,57,43,0.30);
+      color: #e74c3c;
+      padding: 10px 14px;
+      font-size: 13px;
+      margin-bottom: 16px;
+      display: none;
+    }
+
+    .login-footer {
+      text-align: center;
+      margin-top: 24px;
+      font-size: 11px;
+      color: #3a2415;
+    }
+  </style>
+</head>
+<body>
+
+<div class="login-wrap">
+  <div class="login-box">
+
+    <div class="login-logo">
+      <div class="name">🍷 Delicias y Vinos</div>
+      <div class="sub">Panel de Administración</div>
+      <div class="divider"></div>
+    </div>
+
+    <h2>Iniciar Sesión</h2>
+
+    <div class="erro" id="erro-msg">Credenciales incorrectas</div>
+
+    <div class="form-grupo">
+      <label>Email</label>
+      <input type="email" id="email" placeholder="admin@deliciasyvinos.com" autocomplete="email">
+    </div>
+
+    <div class="form-grupo">
+      <label>Contraseña</label>
+      <input type="password" id="password" placeholder="••••••••" autocomplete="current-password">
+    </div>
+
+    <button class="btn-login" onclick="fazerLogin()">Entrar</button>
+
+    <div class="login-footer">
+      © 2026 Delicias y Vinos
+    </div>
+
+  </div>
+</div>
+
+<script>
+const API = 'http://localhost:3000/api';
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'Enter') fazerLogin();
+});
+
+async function fazerLogin() {
+  const email    = document.getElementById('email').value.trim();
+  const password = document.getElementById('password').value;
+  const erroEl   = document.getElementById('erro-msg');
+
+  if (!email || !password) {
+    erroEl.textContent = 'Por favor rellena todos los campos.';
+    erroEl.style.display = 'block';
+    return;
+  }
+
+  try {
+    const res  = await fetch(`${API}/auth/login`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, password })
+    });
+
+    const data = await res.json();
+
+    if (!res.ok) {
+      erroEl.textContent = data.erro || 'Credenciales incorrectas';
+      erroEl.style.display = 'block';
+      return;
+    }
+
+    if (data.role !== 'admin') {
+      erroEl.textContent = 'No tienes permisos de administrador.';
+      erroEl.style.display = 'block';
+      return;
+    }
+
+    // Guarda token
+    localStorage.setItem('admin_token', data.token);
+    localStorage.setItem('admin_nome', data.nome);
+
+    // Redireciona para admin
+    window.location.href = 'admin.html';
+
+  } catch {
+    erroEl.textContent = 'Error de conexión con el servidor.';
+    erroEl.style.display = 'block';
+  }
+}
+</script>
+</body>
+</html>

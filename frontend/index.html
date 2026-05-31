@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Delicias y Vinos — Vino, Licores y Productos Gourmet</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+  <!-- AGE GATE -->
+  <div id="age-gate">
+    <div class="age-box">
+      <img class="age-logo" src="https://www.deliciasyvinos.com/themes/deliciasyvinos/_img/logo.png" alt="Delicias y Vinos">
+      <div class="age-divider"></div>
+      <p class="eyebrow">Acceso restringido</p>
+      <h2>¿Tienes 18 años o más?</h2>
+      <div class="age-btns">
+        <button id="age-no" onclick="denyAge()">NO</button>
+        <button class="btn-primary" onclick="document.getElementById('age-gate').style.display='none'">SÍ, TENGO 18+</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header class="hdr" id="main-header">
+    <div class="hdr-top">
+      <span>Envíos a toda España</span>
+    </div>
+    <div class="hdr-main">
+      <a href="#" class="hdr-logo" data-page="home">
+        <img src="https://www.deliciasyvinos.com/themes/deliciasyvinos/_img/logo_header.png" alt="Delicias y Vinos">
+      </a>
+      <div class="hdr-actions">
+          <button class="btn-search" id="search-btn" onclick="toggleSearch()">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+  </button>
+        <a href="#" class="btn-calidad" data-page="calidad">CALIDAD</a>
+        <a href="#" class="btn-ghost" data-page="login">👤 Iniciar sesión</a>
+        <button class="btn-cart" id="cart-btn" data-page="cart">
+          <svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+          <span id="cart-count">0</span>
+        </button>
+      </div>
+    </div>
+    <nav class="hdr-nav">
+     <ul class="nav-list">
+  <li class="nav-item nav-item--has-dropdown">
+    <a href="#" data-cat="vinos">VINOS ▾</a>
+    <ul class="nav-drop">
+      <li><a href="#" data-cat="blancos">Blancos</a>
+        <ul class="nav-sub">
+          <li><a href="#" data-cat="albarino">Albariño</a></li>
+          <li><a href="#" data-cat="godello">Godello</a></li>
+          <li><a href="#" data-cat="ribeiro">Ribeiro</a></li>
+          <li><a href="#" data-cat="verdejo">Verdejo</a></li>
+        </ul>
+      </li>
+      <li><a href="#" data-cat="tintos">Tintos</a>
+        <ul class="nav-sub">
+          <li><a href="#" data-cat="rioja">Rioja</a></li>
+          <li><a href="#" data-cat="riberadelduero">Ribera del Duero</a></li>
+          <li><a href="#" data-cat="mencia">Mencía</a></li>
+        </ul>
+      </li>
+      <li><a href="#" data-cat="tintos">Espumoso</a>
+        <ul class="nav-sub">
+          <li><a href="#" data-cat="cava">Cava</a></li>
+          <li><a href="#" data-cat="champagne">Champagne</a></li>
+        </ul>
+      </li>
+      <li><a href="#" data-cat="rosado">Rosado</a></li>
+      <li><a href="#" data-cat="dulces">Dulces</a></li>
+      <li><a href="#" data-cat="magnum">Magnum</a></li>
+      <li><a href="#" data-cat="estuches">Estuches</a></li>
+      <li><a href="#" data-cat="internacionales">Internacionales</a></li>
+    </ul>
+  </li>
+
+  <li class="nav-item nav-item--has-dropdown">
+    <a href="#" data-cat="destilados">DESTILADOS ▾</a>
+    <ul class="nav-drop">
+      <li><a href="#" data-cat="vermouth">Vermouth</a></li>
+      <li><a href="#" data-cat="sidra">Sidra</a></li>
+      <li><a href="#" data-cat="cremasylicores">Cremas y Licores</a></li>
+      <li><a href="#" data-cat="brandys">Brandys</a></li>
+    </ul>
+  </li>
+
+  <li class="nav-item nav-item--has-dropdown">
+    <a href="#" data-cat="infusiones">INFUSIONES ▾</a>
+    <ul class="nav-drop">
+      <li><a href="#" data-cat="cafe">Café</a></li>
+      <li><a href="#" data-cat="cerveza">Cerveza</a></li>
+    </ul>
+  </li>
+
+  <li class="nav-item nav-item--has-dropdown">
+    <a href="#" data-cat="gourmet">GOURMET ▾</a>
+    <ul class="nav-drop">
+      <li><a href="#" data-cat="conservas">Conservas</a></li>
+      <li><a href="#" data-cat="aceite">Aceite</a></li>
+      <li><a href="#" data-cat="ibéricos">Ibéricos</a></li>
+      <li><a href="#" data-cat="pimentòn">Pimentòn</a></li>
+      <li><a href="#" data-cat="fruta">Fruta</a></li>
+
+
+    </ul>
+  </li>
+
+  <li class="nav-item nav-item--has-dropdown">
+    <a href="#" data-cat="dulce">DULCE ▾</a>
+    <ul class="nav-drop">
+      <li><a href="#" data-cat="chocolates">Chocolates</a></li>
+      <li><a href="#" data-cat="bombones">Bombones</a></li>
+    </ul>
+  </li>
+</ul>
+    </nav>
+  </header>
+  <!-- PESQUISA -->
+<div id="search-panel" class="search-panel">
+  <div class="search-inner">
+    <input type="text" id="search-input" placeholder="Buscar productos..." oninput="doSearch(this.value)">
+    <button onclick="toggleSearch()">✕</button>
+  </div>
+  <div id="search-results" class="search-results"></div>
+</div>
+
+  <!-- HOME -->
+  <div id="page-home" class="page active">
+    <main>
+
+      <!-- HERO SLIDER -->
+<section class="hero-banner">
+  <div class="hero-slides">
+    <div class="hero-slide active" style="background-image:url('https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=1600&q=80')"></div>
+    <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1569919659476-f0852f6834b7?w=1600&q=80')"></div>
+    <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1474722883778-792e7990302f?w=1600&q=80')"></div>
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">Tradición y Calidad desde 1952</p>
+    <h1 class="hero-title">Delicias<em>y</em>Vinos</h1>
+    <p class="hero-sub">Lo mejor en vinos, licores y productos gourmet.<br>Desde Lugo, Galicia, para toda España.</p>
+    <div class="hero-btns">
+    </div>
+  </div>
+  <div class="hero-dots">
+    <span class="hero-dot active" onclick="goSlide(0)"></span>
+    <span class="hero-dot" onclick="goSlide(1)"></span>
+    <span class="hero-dot" onclick="goSlide(2)"></span>
+  </div>
+</section>
+
+<!-- CATEGORIAS -->
+<section class="cat-grid-section">
+  <div class="wrap">
+    <div class="cat-grid-4">
+      <a href="#" class="cat-item" data-cat="vinos">
+        <img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=600&q=80" alt="Vinos">
+        <div class="cat-item-label"><h3>Vinos</h3><span>Blancos, tintos, rosados y espumosos</span></div>
+      </a>
+      <a href="#" class="cat-item" data-cat="destilados">
+        <img src="https://images.unsplash.com/photo-1569919659476-f0852f6834b7?w=600&q=80" alt="Destilados">
+        <div class="cat-item-label"><h3>Destilados</h3><span>Gin, whisky, ron y licores</span></div>
+      </a>
+      <a href="#" class="cat-item" data-cat="gourmet">
+        <img src="https://images.unsplash.com/photo-1474722883778-792e7990302f?w=600&q=80" alt="Gourmet">
+        <div class="cat-item-label"><h3>Gourmet</h3><span>Conservas, quesos y chocolates</span></div>
+      </a>
+      <a href="#" class="cat-item" data-cat="ibericos">
+        <img src="https://images.unsplash.com/photo-1551218808-94e220e084d2?w=600&q=80" alt="Ibéricos">
+        <div class="cat-item-label"><h3>Ibéricos</h3><span>Jamones y paletas de calidad</span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+      <!-- RECOMENDACIÓN -->
+      <section class="recom">
+        <div class="wrap">
+          <div class="sec-hdr">
+            <span class="eyebrow">Selección del mes</span>
+            <h2>Nuestra Recomendación</h2>
+          </div>
+          <div class="carousel">
+            <button class="car-btn" id="car-prev">&#8592;</button>
+            <div class="car-wrap">
+              <div class="car-track" id="car-track"></div>
+            </div>
+            <button class="car-btn" id="car-next">&#8594;</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- DESTACADOS -->
+      <section class="products">
+        <div class="wrap">
+          <div class="sec-hdr">
+            <span class="eyebrow">Catálogo</span>
+            <h2>Productos Destacados</h2>
+          </div>
+          <div class="pgrid" id="pgrid"></div>
+        </div>
+      </section>
+
+      <!-- BANNER -->
+      <section class="mid-banner">
+        <img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=1600&q=80" alt="">
+        <div class="mid-banner-content">
+          <h2>Tradición y Calidad<br>desde 1952</h2>
+          <p>Empresa familiar especializada en la distribución de vinos, licores y productos gourmet desde Lugo, Galicia.</p>
+          <a href="#" class="btn-ghost" data-page="conocenos">Conócenos →</a>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- CATEGORIA -->
+  <div id="page-category" class="page">
+    <div class="cat-page">
+      <div class="cat-inner">
+        <aside class="cat-side">
+          <div class="cat-side-head">Subcategorías</div>
+          <div id="sidebar-subcats"></div>
+          <div class="price-section">
+            <div class="price-head">Precio</div>
+            <ul class="price-filter">
+              <li><label><input type="checkbox"> 0 — 10 €</label></li>
+              <li><label><input type="checkbox"> 10 — 25 €</label></li>
+              <li><label><input type="checkbox"> 25 — 50 €</label></li>
+              <li><label><input type="checkbox"> + 50 €</label></li>
+            </ul>
+          </div>
+        </aside>
+        <div class="cat-content">
+          <div class="breadcrumb">
+            <a href="#" data-page="home">Inicio</a>
+            <span>›</span>
+            <span id="category-name">Categoría</span>
+          </div>
+          <h1 id="category-title">Categoría</h1>
+          <div class="pgrid" id="category-products"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRODUTO -->
+  <div id="page-product" class="page">
+    <div class="prod-page">
+      <div class="breadcrumb">
+        <a href="#" data-page="home">Inicio</a><span>›</span>
+        <span id="product-breadcrumb-name">Producto</span>
+      </div>
+      <div class="prod-inner">
+        <div class="prod-img">
+          <img id="product-img" src="" alt="">
+        </div>
+        <div class="prod-details">
+          <span class="eyebrow" id="product-meta"></span>
+          <h1 id="product-name"></h1>
+          <div class="prod-price-rule"></div>
+          <div class="prod-price" id="product-price"></div>
+          <p class="prod-stock">✓ Disponibilidad: <strong>En stock</strong></p>
+          <div class="prod-btns">
+            <button class="btn-primary" id="product-add-btn">Añadir a la cesta</button>
+            <button class="btn-secondary">Comprar ya!</button>
+          </div>
+          <p class="prod-desc" id="product-desc"></p>
+        </div>
+      </div>
+      <div class="wrap">
+        <div class="sec-hdr">
+          <span class="eyebrow">También te puede gustar</span>
+          <h2>Productos relacionados</h2>
+        </div>
+        <div class="pgrid" id="related-products-grid"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CALIDAD -->
+  <div id="page-calidad" class="page">
+    <div class="static-page">
+      <h1>Calidad</h1>
+      <span class="rule"></span>
+      <p>Ramón Morandeira Villar S.L. asegura la <strong>satisfacción de cada una de las partes interesadas</strong>.</p>
+      <h2>Misión</h2><p>Conseguir el liderazgo en el mercado con fidelización y beneficios.</p>
+      <h2>Visión</h2><p>Ser un socio estratégico para todos sus clientes con soluciones sostenibles.</p>
+      <h2>Valores</h2>
+      <ul class="values-list">
+        <li><strong>Calidad:</strong> buscar siempre la excelencia.</li>
+        <li><strong>Transparencia:</strong> relaciones comerciales claras.</li>
+        <li><strong>Liderazgo:</strong> dar forma a un futuro mejor.</li>
+        <li><strong>Compromiso:</strong> equipo comprometido con la estrategia.</li>
+        <li><strong>Integridad:</strong> ser transparentes.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- CONÓCENOS -->
+  <div id="page-conocenos" class="page">
+    <div class="static-page">
+      <h1>Conócenos</h1>
+      <span class="rule"></span>
+      <p>Empresa especializada en venta y distribución de alimentos y bebidas <strong>desde 1952</strong>.</p>
+      <h2>Nuestra historia</h2>
+      <p>Fundada en 1952, Delicias y Vinos es un referente del sector en Galicia, combinando tradición e innovación.</p>
+    </div>
+  </div>
+
+  <!-- CONTACTO -->
+  <div id="page-contacto" class="page">
+    <div class="static-page">
+      <h1>Contacto</h1>
+      <span class="rule"></span>
+      <div class="contact-grid">
+        <div class="contact-form-box">
+          <div class="form-group"><label>Nombre</label><input type="text" placeholder="Tu nombre"></div>
+          <div class="form-group"><label>Email</label><input type="email" placeholder="tu@email.com"></div>
+          <div class="form-group"><label>Mensaje</label><textarea rows="6" placeholder="¿En qué podemos ayudarte?"></textarea></div>
+          <button class="btn-primary">Enviar mensaje</button>
+        </div>
+        <div class="contact-info-box">
+          <h3>Datos de contacto</h3>
+          <p>📞 (+34) 604 066 581</p>
+          <p>✉ pedidos@deliciasyvinos.com</p>
+          <p>📍 Rúa da Industria, 93 — 27003 Lugo</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LOGIN -->
+  <div id="page-login" class="page">
+    <div class="login-close" onclick="closePage('login')">✕</div>
+    <h2>Bienvenido</h2>
+    <p class="sub">Accede a tu cuenta para gestionar tus pedidos</p>
+    <span class="rule"></span>
+    <div class="form-group"><label>Email</label><input type="email" placeholder="tu@email.com"></div>
+    <div class="form-group"><label>Contraseña</label><input type="password" placeholder="Tu contraseña"></div>
+    <button class="btn-primary" style="width:100%">Entrar</button>
+    <div class="login-links">
+      <a href="#">¿Olvidaste tu contraseña?</a>
+      <a href="#">Crear cuenta</a>
+    </div>
+  </div>
+
+  <!-- CARRINHO -->
+  <div id="page-cart" class="page">
+    <div class="cart-page">
+      <h1>Tu cesta</h1>
+      <span class="rule"></span>
+      <div id="cart-items"><p class="cart-empty">Tu cesta está vacía.</p></div>
+      <div class="cart-total" id="cart-total-display" style="display:none">
+        Total: <span id="cart-total-price">0,00€</span>
+      </div>
+      <div style="margin-top:1.5rem;display:flex;gap:1rem;flex-wrap:wrap">
+        <button class="btn-primary" style="flex:1">Finalizar compra</button>
+        <button class="btn-ghost" data-page="home" style="flex:1">Seguir comprando</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- AVISO LEGAL -->
+  <div id="page-avisolegal" class="page">
+    <div class="static-page">
+      <h1>Aviso Legal</h1>
+      <span class="rule"></span>
+      <p>Titular: <strong>Ramón Morandeira Villar S.L.</strong></p>
+      <p>Domicilio: Rúa da Industria, 93 — 27003 Lugo<br>Tel: (+34) 604 066 581</p>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+ <footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="https://www.deliciasyvinos.com/themes/deliciasyvinos/_img/logo_header.png" alt="Delicias y Vinos">
+      <p>Empresa especializada en la venta y distribución de alimentos y bebidas desde 1952.</p>
+      <div class="footer-flags">
+        <img src="https://www.deliciasyvinos.com/themes/deliciasyvinos/_img/flags/es.png" alt="ES">
+        <img src="https://www.deliciasyvinos.com/themes/deliciasyvinos/_img/flags/pt.png" alt="PT">
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Legalidad</h4>
+      <ul>
+        <li><a href="#" data-page="avisolegal">Aviso Legal</a></li>
+        <li><a href="#" data-page="privacidad">Política de Privacidad</a></li>
+        <li><a href="#" data-page="cookies">Política de Cookies</a></li>
+        <li><a href="#" data-page="enviospagos">Envíos y Pagos</a></li>
+        <li><a href="#" data-page="terminos">Terminos y condiciones</a></li>
+        <li><a href="#" data-page="canal">Canal de información</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Ayuda y soporte</h4>
+      <ul>
+        <li><a href="#" data-page="conocenos">Conócenos</a></li>
+        <li><a href="#" data-page="contacto">Formulario de Contacto</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contacto</h4>
+      <ul>
+        <li><a href="tel:+34604066581">📞 (+34) 604 066 581</a></li>
+        <li><a href="mailto:pedidos@deliciasyvinos.com">✉ pedidos@deliciasyvinos.com</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Dirección</h4>
+      <ul>
+        <li>📍 Rúa da Industria, 93</li>
+        <li>27003 - Polígono del Ceao (LUGO)</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-logos">
+    <img src="https://www.deliciasyvinos.com/themes/deliciasyvinos/_img/ue_nextgenerationue.png" alt="EU">
+    <img src="https://www.deliciasyvinos.com/themes/deliciasyvinos/_img/ue_nextgenerationue2.png" alt="EU2">
+    <img src="https://www.deliciasyvinos.com/themes/deliciasyvinos/_img/ue_planrecuperacion.png" alt="Plan">
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 deliciasyvinos - Todos los derechos reservados</p>
+    <p>Powered by SmartCommerce</p>
+  </div>
+</footer>
+<!-- PRIVACIDAD -->
+<div id="page-privacidad" class="page">
+  <div class="static-page">
+    <h1>Política de Privacidad</h1>
+    <span class="rule"></span>
+    <p>En cumplimiento del RGPD informamos sobre el tratamiento de sus datos personales.</p>
+    <h2>Responsable</h2>
+    <p>Ramón Morandeira Villar S.L. — pedidos@deliciasyvinos.com</p>
+  </div>
+</div>
+
+<!-- COOKIES -->
+<div id="page-cookies" class="page">
+  <div class="static-page">
+    <h1>Política de Cookies</h1>
+    <span class="rule"></span>
+    <p>Utilizamos cookies propias y de terceros para mejorar la experiencia del usuario.</p>
+    <ul class="values-list">
+      <li><strong>Técnicas:</strong> necesarias para el funcionamiento.</li>
+      <li><strong>Analíticas:</strong> permiten conocer el uso del sitio.</li>
+      <li><strong>Personalización:</strong> recuerdan sus preferencias.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ENVIOS -->
+<div id="page-enviospagos" class="page">
+  <div class="static-page">
+    <h1>Envíos y Pagos</h1>
+    <span class="rule"></span>
+    <h2>Métodos de pago</h2>
+    <ul class="values-list">
+      <li><strong>Tarjeta:</strong> Visa, Mastercard.</li>
+      <li><strong>Transferencia bancaria.</strong></li>
+      <li><strong>PayPal.</strong></li>
+    </ul>
+    <h2>Plazos</h2>
+    <p>Península: 24–48h. Islas y Portugal: 3–5 días.</p>
+  </div>
+</div>
+
+<!-- TERMINOS -->
+<div id="page-terminos" class="page">
+  <div class="static-page">
+    <h1>Términos y Condiciones</h1>
+    <span class="rule"></span>
+    <p>La realización de un pedido implica la aceptación de estos términos.</p>
+    <h2>Precios</h2>
+    <p>Todos los precios incluyen IVA.</p>
+  </div>
+</div>
+
+<!-- CANAL -->
+<div id="page-canal" class="page">
+  <div class="static-page">
+    <h1>Canal de Información</h1>
+    <span class="rule"></span>
+    <p>Canal para comunicar irregularidades.</p>
+    <p>Email: <strong>pedidos@deliciasyvinos.com</strong> — Asunto: "Canal de Información"</p>
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+</html>
